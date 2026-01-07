@@ -11,7 +11,7 @@
             margin: 0;
             background-color: #ffffff;
             font-family: 'Utah Condensed', Arial, sans-serif;
-            color: #000;
+            color: #fff;
         }
 
         .menu {
@@ -22,6 +22,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            z-index: 10;
         }
 
         .menu a {
@@ -49,16 +50,35 @@
 
         .content {
             margin-left: 500px;
-            padding: 80px;
             display: flex;
             flex-direction: column;
             gap: 60px;
         }
 
         .project {
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: 24px;
+            padding: 120px 60px; /* больше пространства для текста */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 500px;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4); /* затемнение фона */
+            z-index: 0;
+        }
+
+        .project h2, .project p {
+            position: relative;
+            z-index: 1;
         }
 
         .project h2 {
@@ -71,17 +91,6 @@
         .project p {
             font-size: 20px;
             line-height: 1.4;
-        }
-
-        .project img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .project iframe {
-            width: 100%;
-            min-height: 400px;
-            border: none;
         }
     </style>
 </head>
@@ -102,40 +111,32 @@
 <div class="content">
 
     <!-- Project: What am I carrying -->
-    <div class="project">
+    <div class="project" style="background-image: url('art/what-am-i-carrying-1.jpg');">
         <h2>What am I carrying?</h2>
         <p><strong>Sound design for exhibition:</strong> Northern River Station of Moscow, 2025</p>
         <p><strong>Scope of work:</strong> Music creation, sound design, mixing and processing</p>
-        <p><strong>About project:</strong> <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank">artmoskovia.ru</a></p>
-        <img src="art/what-am-i-carrying-1.jpg" alt="What am I carrying - Image 1">
-        <img src="art/what-am-i-carrying-2.jpg" alt="What am I carrying - Image 2">
+        <p><strong>About project:</strong> <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank" style="color:#fff;text-decoration:underline;">artmoskovia.ru</a></p>
     </div>
 
     <!-- Project: Small ship, big voyage -->
-    <div class="project">
+    <div class="project" style="background-image: url('art/small-ship-big-voyage-1.jpg');">
         <h2>Small ship, big voyage</h2>
         <p><strong>Sound design / Music:</strong> Interactive installation, 2024</p>
         <p><strong>Scope of work:</strong> Composition, sound design, audio post-production</p>
-        <img src="art/small-ship-big-voyage-1.jpg" alt="Small ship, big voyage 1">
-        <img src="art/small-ship-big-voyage-2.jpg" alt="Small ship, big voyage 2">
     </div>
 
     <!-- Project: The Moscow River age / Triennale di Milano / 2019 -->
-    <div class="project">
+    <div class="project" style="background-image: url('art/moscow-river-age-1.jpg');">
         <h2>The Moscow River age / Triennale di Milano / 2019</h2>
         <p><strong>Sound design / Music:</strong> Exhibition at Triennale di Milano, 2019</p>
         <p><strong>Scope of work:</strong> Audio design, ambient sound creation</p>
-        <img src="art/moscow-river-age-1.jpg" alt="Moscow River age 1">
-        <img src="art/moscow-river-age-2.jpg" alt="Moscow River age 2">
     </div>
 
     <!-- Project: SAGE OF THE SEA -->
-    <div class="project">
+    <div class="project" style="background-image: url('art/sage-of-the-sea-1.jpg');">
         <h2>SAGE OF THE SEA</h2>
         <p><strong>Sound design:</strong> Immersive exhibition, 2023</p>
         <p><strong>Scope of work:</strong> Composition, audio spatialization, sound effects</p>
-        <img src="art/sage-of-the-sea-1.jpg" alt="SAGE OF THE SEA 1">
-        <img src="art/sage-of-the-sea-2.jpg" alt="SAGE OF THE SEA 2">
     </div>
 
 </div>
