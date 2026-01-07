@@ -9,13 +9,10 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
             background-color: #ffffff;
             font-family: 'Utah Condensed', Arial, sans-serif;
             color: #000;
         }
-
-        /* ===== LEFT CENTERED MENU ===== */
 
         .menu {
             position: fixed;
@@ -50,13 +47,41 @@
             line-height: 1.1;
         }
 
-        /* ===== CONTENT ===== */
-
         .content {
             margin-left: 360px;
-            padding-top: 80px;
-            font-size: 28px;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project h2 {
+            font-size: 32px;
             font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .project p {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .project iframe {
+            width: 100%;
+            min-height: 400px;
+            border: none;
         }
     </style>
 </head>
@@ -64,7 +89,6 @@
 
 <nav class="menu">
     <a href="index.html">misha fedotov</a>
-
     <a href="art.html">art</a>
     <a href="ad.html">ad</a>
     <a href="gamedev.html">gamedev</a>
@@ -76,7 +100,22 @@
 </nav>
 
 <div class="content">
-    <iframe src="https://www.behance.net/embed/project/225601127?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+
+    <!-- What am I carrying? -->
+    <div class="project">
+        <h2>What am I carrying?</h2>
+        <p><strong>Sound design for exhibition:</strong> Northern River Station of Moscow, 2025</p>
+        <p><strong>Scope of work:</strong> Music creation, sound design, mixing and processing</p>
+        <p><strong>About project:</strong> <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank">artmoskovia.ru</a></p>
+        
+        <!-- Добавь свои изображения -->
+        <img src="art/what-am-i-carrying-1.jpg" alt="What am I carrying - Image 1">
+        <img src="art/what-am-i-carrying-2.jpg" alt="What am I carrying - Image 2">
+        
+        <!-- Если есть embed SoundCloud / видео, вставь сюда -->
+        <!-- <iframe src="EMBED_LINK"></iframe> -->
+    </div>
+
 </div>
 
 </body>
