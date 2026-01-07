@@ -16,15 +16,16 @@
             color: #000;
         }
 
-        /* ===== LEFT COLUMN MENU ===== */
+        /* ===== LEFT CENTERED MENU ===== */
 
         .menu {
             position: fixed;
-            top: 80px;            /* опущено ниже */
+            top: 50%;
             left: 40px;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 18px;            /* ОДИНАКОВЫЙ отступ везде */
+            gap: 18px;
         }
 
         .menu a {
@@ -35,30 +36,33 @@
             color: #000;
             border-bottom: 1px solid transparent;
             width: fit-content;
+            font-weight: 700;
         }
 
         .menu a:hover {
             border-bottom: 1px solid #000;
         }
 
-        .menu .title {
-            font-weight: 700;
+        .menu .contacts {
+            font-size: 9px;              /* в 3 раза меньше */
+            text-transform: capitalize; /* Title Case */
+            letter-spacing: 0.8px;
         }
     </style>
 </head>
 <body>
 
     <nav class="menu">
-        <a href="index.html" class="title">misha fedotov</a>
+        <a href="index.html">misha fedotov</a>
 
         <a href="art.html">art</a>
         <a href="ad.html">ad</a>
         <a href="gamedev.html">gamedev</a>
 
-        <a href="https://t.me/mishafedotov" target="_blank">telegram</a>
-        <a href="https://soundcloud.com/misha_fedotov/" target="_blank">soundcloud</a>
-        <a href="https://behance.net/gallery/151338065/Portfolio" target="_blank">behance</a>
-        <a href="https://instagram.com/mishshaa" target="_blank">instagram</a>
+        <a href="https://t.me/mishafedotov" target="_blank" class="contacts">Telegram</a>
+        <a href="https://soundcloud.com/misha_fedotov/" target="_blank" class="contacts">Soundcloud</a>
+        <a href="https://behance.net/gallery/151338065/Portfolio" target="_blank" class="contacts">Behance</a>
+        <a href="https://instagram.com/mishshaa" target="_blank" class="contacts">Instagram</a>
     </nav>
 
 </body>
