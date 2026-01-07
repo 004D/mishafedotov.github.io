@@ -11,99 +11,66 @@
         body {
             margin: 0;
             height: 100vh;
-            background-color: #FFFFF;
+            background-color: #ffffff;
             font-family: 'Utah Condensed', Arial, sans-serif;
             color: #000;
         }
 
-        /* ===== SHARED MENU ===== */
+        /* ===== LEFT COLUMN (OUR LEGACY STYLE) ===== */
 
-          .header {
+        .menu {
             position: fixed;
             top: 30px;
             left: 40px;
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: 0,5px;
-            text-transform: uppercase;
-            font-style: italic;
-        }
-
-        .catalog {
-            position: fixed;
-            top: 40px;
-            left: 40px;
             display: flex;
             flex-direction: column;
-            gap: 22px;
+            gap: 18px;
         }
 
-        .catalog a {
-            font-size: 24px;
+        .menu a {
+            font-size: 26px;
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
             color: #000;
             border-bottom: 1px solid transparent;
             width: fit-content;
-            font-style: italic;
         }
 
-        .catalog a:hover {
+        .menu a:hover {
             border-bottom: 1px solid #000;
         }
 
-        .socials {
-            position: fixed;
-            top: 210px;
-            left: 40px;
-            display: flex;
-            gap: 22px;
-            flex-direction: column;
-
+        /* title / home link */
+        .menu .title {
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .socials a {
-            font-size: 24px;
-            letter-spacing: 1px;
-            text-transform: lowercase;
-            text-decoration: none;
-            color: #000;
-            border-bottom: 1px solid transparent;
-            font-style: italic;
-
-        }
-
-        .socials a:hover {
-            border-bottom: 1px solid #000;
-        }
-
-        /* ===== MAIN EMPTY SPACE ===== */
-
-        .empty {
-            height: 100vh;
+        /* socials spacing */
+        .menu .divider {
+            height: 24px;
         }
     </style>
 </head>
 <body>
 
-    <!-- shared menu -->
-    <div class="header">misha fedotov</div>
+    <!-- LEFT COLUMN MENU -->
+    <nav class="menu">
+        <!-- title as home button -->
+        <a href="index.html" class="title">misha fedotov</a>
 
-    <nav class="catalog">
-        <a href="art.html">ART</a>
-        <a href="ad.html">AD</a>
-        <a href="gamedev.html">GAMEDEV</a>
-    </nav>
+        <a href="art.html">art</a>
+        <a href="ad.html">ad</a>
+        <a href="gamedev.html">gamedev</a>
 
-    <div class="socials">
+        <div class="divider"></div>
+
         <a href="https://t.me/mishafedotov" target="_blank">telegram</a>
         <a href="https://soundcloud.com/misha_fedotov/" target="_blank">soundcloud</a>
         <a href="https://behance.net/gallery/151338065/Portfolio" target="_blank">behance</a>
         <a href="https://instagram.com/mishshaa" target="_blank">instagram</a>
-    </div>
-
-    <div class="empty"></div>
+    </nav>
 
 </body>
 </html>
