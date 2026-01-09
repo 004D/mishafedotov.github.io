@@ -10,12 +10,12 @@
     <style>
         body {
             margin: 0;
-            background-color: #000;
+            background-color: #ffffff;
             font-family: 'Utah Condensed', Arial, sans-serif;
-            color: #fff;
+            color: #000;
         }
 
-        /* ===== FINAL MENU (UNCHANGED) ===== */
+        /* ===== MENU (FINAL, НЕ ТРОГАЕМ) ===== */
 
         .menu {
             position: fixed;
@@ -34,14 +34,14 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
-            color: #fff;
+            color: #000;
             width: fit-content;
             line-height: 0.95;
             border-bottom: 1px solid transparent;
         }
 
         .menu a:hover {
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid #000;
         }
 
         .menu .contacts {
@@ -51,53 +51,74 @@
             line-height: 1.1;
         }
 
-        /* ===== ART CONTENT ===== */
+        /* ===== CONTENT ===== */
 
         .content {
-            margin-left: 320px; /* зона меню */
-            padding: 80px 40px;
+            margin-left: 500px;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
         }
 
         .project {
+            position: relative;
             display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 120px; /* небольшие промежутки между проектами */
-        }
+            flex-direction: column;
+            gap: 24px;
+            padding: 120px 60px;
+            min-height: 500px;
 
-        .project-image {
-            flex: 1;
-            min-height: 420px;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .project-text {
-            flex: 1;
+        /* лёгкое затемнение, как в старом варианте */
+        .project::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 0;
+        }
+
+        .project h2,
+        .project p,
+        .project a,
+        .project iframe {
+            position: relative;
+            z-index: 1;
+            color: #fff;
         }
 
         .project h2 {
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 20px;
         }
 
         .project p {
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1.4;
-            white-space: pre-line;
-            margin-bottom: 24px;
+            max-width: 700px;
         }
 
-        iframe {
-            margin-top: 24px;
+        .project a {
+            text-decoration: underline;
+        }
+
+        .project iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 320px;
+            border: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<!-- MENU -->
 <nav class="menu">
     <a href="index.html">misha fedotov</a>
     <a href="art.html">art</a>
@@ -110,82 +131,43 @@
     <a href="https://instagram.com/mishshaa" target="_blank" class="contacts">Instagram</a>
 </nav>
 
-<main class="content">
+<div class="content">
 
-    <!-- PROJECT 1 -->
-    <section class="project">
-        <div class="project-image" style="background-image:url('art/what-am-i-carrying-1.jpg')"></div>
+    <!-- WHAT AM I CARRYING -->
+    <div class="project" style="background-image: url('art/what-am-i-carrying/1.jpg');">
+        <h2>What am I carrying?</h2>
+        <p><strong>Sound design for exhibition:</strong> Northern River Station of Moscow, 2025</p>
+        <p><strong>Scope of work:</strong> Music creation, sound design, mixing and processing</p>
+        <p>
+            <strong>About project:</strong>
+            <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank">
+                artmoskovia.ru
+            </a>
+        </p>
+    </div>
 
-        <div class="project-text">
-            <h2>What am I carrying?</h2>
-            <p>
-About project:
-https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html
-            </p>
+    <!-- SMALL SHIP -->
+    <div class="project" style="background-image: url('art/small-ship/1.jpg');">
+        <h2>Small ship, big voyage</h2>
+        <p><strong>Sound design / Music:</strong> Interactive installation, 2024</p>
+        <p><strong>Scope of work:</strong> Composition, sound design, audio post-production</p>
+    </div>
 
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2093760270&auto_play=false&visual=true">
-            </iframe>
-        </div>
-    </section>
+    <!-- MOSCOW RIVER AGE -->
+    <div class="project" style="background-image: url('art/moscow-river-age/1.jpg');">
+        <h2>The Moscow River age / Triennale di Milano</h2>
+        <p><strong>Sound design / Music:</strong> Exhibition, 2019</p>
+        <p><strong>Scope of work:</strong> Audio design, ambient sound creation</p>
+    </div>
 
-    <!-- PROJECT 2 -->
-    <section class="project">
-        <div class="project-image" style="background-image:url('art/small-ship-big-voyage-1.jpg')"></div>
+    <!-- SAGA OF THE SEA -->
+    <div class="project" style="background-image: url('art/saga-of-the-sea/1.jpg');">
+        <h2>Saga of the Sea</h2>
+        <p><strong>Sound design:</strong> Immersive exhibition, 2023</p>
+        <p><strong>Scope of work:</strong> Composition, spatial audio, sound effects</p>
+    </div>
 
-        <div class="project-text">
-            <h2>Small Ship</h2>
-            <p>
-About project:
-https://www.afisha.ru/exhibition/malenkomu-korablyu-bolshoe-plavanie-291265/
-            </p>
-
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1933720127&auto_play=false&visual=true">
-            </iframe>
-        </div>
-    </section>
-
-    <!-- PROJECT 3 -->
-    <section class="project">
-        <div class="project-image" style="background-image:url('art/moscow-river-age-1.jpg')"></div>
-
-        <div class="project-text">
-            <h2>The Moscow River Age / Triennale di Milano</h2>
-            <p>
-My task was to create 4 abstract music compositions, each with a duration of 2 hours, to imagine how the Moscow river would sound in 2070…
-
-About project:
-https://meganom.moscow/project/the-moscow-river-age/
-            </p>
-
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/922672369&auto_play=false&visual=true">
-            </iframe>
-        </div>
-    </section>
-
-    <!-- PROJECT 4 -->
-    <section class="project">
-        <div class="project-image" style="background-image:url('art/sage-of-the-sea-1.jpg')"></div>
-
-        <div class="project-text">
-            <h2>Saga of the Sea</h2>
-            <p>
-Okhotka is a seafood restaurant in Moscow.
-I was invited to participate in the creation of an audio guide for the flagship restaurant.
-
-About project:
-https://izi.travel/en/09f4-saga-o-more-ohotka/ru#abd6-barelef/ru
-            </p>
-
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1889710808&auto_play=false&visual=true">
-            </iframe>
-        </div>
-    </section>
-
-</main>
+</div>
 
 </body>
 </html>
