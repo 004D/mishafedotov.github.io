@@ -14,7 +14,7 @@ body {
     color: #000;
 }
 
-/* ===== MENU (ФИНАЛ) ===== */
+/* ===== MENU (ФИНАЛ, КАК ТЫ ДАЛ) ===== */
 
 .menu {
     position: fixed;
@@ -42,34 +42,35 @@ body {
     text-transform: capitalize;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== PROJECT SECTIONS ===== */
 
 .section {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
 
-/* картинка занимает ПРАВУЮ ЧАСТЬ */
+/* ФОН ПРОЕКТА */
 .section::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
+    left: 450px;          /* 🔑 центр между меню и текстом */
     right: 0;
-
-    /* ключевая логика */
-    left: calc((40px + 52px * 4) + (500px - (40px + 52px * 4)) / 2);
-
     background-size: cover;
     background-position: center;
-    z-index: -1;
+    z-index: 0;
 }
 
-/* текстовая часть */
+/* ТЕКСТ */
 .content {
+    position: relative;
+    z-index: 1;
     margin-left: 500px;
     padding: 120px 80px;
-    max-width: 500px;
+    max-width: 520px;
+    color: #fff;
 }
 
 h2 {
@@ -85,14 +86,15 @@ p {
     margin-bottom: 16px;
 }
 
-.content,
-.content a {
+a {
     color: #fff;
+    text-decoration: underline;
 }
 
+/* ЭМБЕДЫ */
 iframe {
     width: 100%;
-    height: 300px;
+    height: 220px;
     border: none;
     margin-top: 24px;
 }
@@ -116,13 +118,17 @@ iframe {
 <!-- WHAT AM I CARRYING -->
 <section class="section" style="--bg:url('art/what-am-i-carrying-1.jpg');">
 <style>
-.section:nth-of-type(1)::before { background-image: url('art/what-am-i-carrying-1.jpg'); }
+.section:nth-of-type(1)::before {
+    background-image: url('art/what-am-i-carrying-1.jpg');
+}
 </style>
 <div class="content">
 <h2>What am I carrying?</h2>
+
 <p>
-Sound design for exhibition at Northern River Station of Moscow.
+My task was to create sound design and music for an exhibition at the Northern River Station of Moscow.
 </p>
+
 <p>
 About project:
 <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank">
@@ -139,10 +145,13 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/so
 <!-- SMALL SHIP -->
 <section class="section">
 <style>
-.section:nth-of-type(2)::before { background-image: url('art/small-ship-big-voyage-1.jpg'); }
+.section:nth-of-type(2)::before {
+    background-image: url('art/small-ship-big-voyage-1.jpg');
+}
 </style>
 <div class="content">
 <h2>Small ship, big voyage</h2>
+
 <p>
 About project:
 <a href="https://www.afisha.ru/exhibition/malenkomu-korablyu-bolshoe-plavanie-291265/" target="_blank">
@@ -159,13 +168,18 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/19
 <!-- MOSCOW RIVER AGE -->
 <section class="section">
 <style>
-.section:nth-of-type(3)::before { background-image: url('art/moscow-river-age-1.jpg'); }
+.section:nth-of-type(3)::before {
+    background-image: url('art/moscow-river-age-1.jpg');
+}
 </style>
 <div class="content">
 <h2>The Moscow River age</h2>
+
 <p>
-My task was to create four abstract music compositions imagining how the Moscow River would sound in 2070…
+My task was to create 4 abstract music compositions, each with a duration of 2 hours, to imagine how the Moscow river would sound in 2070.
+I used sounds of nature, people swimming, wind, industrial machines and electronic instruments.
 </p>
+
 <p>
 About project:
 <a href="https://meganom.moscow/project/the-moscow-river-age/" target="_blank">
@@ -182,13 +196,18 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists
 <!-- SAGE OF THE SEA -->
 <section class="section">
 <style>
-.section:nth-of-type(4)::before { background-image: url('art/sage-of-the-sea-1.jpg'); }
+.section:nth-of-type(4)::before {
+    background-image: url('art/sage-of-the-sea-1.jpg');
+}
 </style>
 <div class="content">
 <h2>Sage of the Sea</h2>
+
 <p>
-Okhotka is a seafood restaurant in Moscow. I was invited to create an audio guide for the flagship restaurant.
+Okhotka is a seafood restaurant in Moscow.
+I created nine musical compositions with actors’ voices for the audio guide of the flagship restaurant.
 </p>
+
 <p>
 About project:
 <a href="https://izi.travel/en/09f4-saga-o-more-ohotka/ru" target="_blank">
