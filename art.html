@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <title>art — misha fedotov</title>
 
-<!-- Utah Condensed -->
 <link href="https://fonts.cdnfonts.com/css/utah-condensed" rel="stylesheet">
 
 <style>
 /* ================= BASE ================= */
 
 :root {
-    --image-left: 550px; /* 🔧 МЕНЯЙ ЭТО, ЧТОБЫ СДВИНУТЬ КАРТИНКИ ВПРАВО/ВЛЕВО */
+    --image-left: 580px; /* 🔧 МЕНЯЙ ЭТО, ЧТОБЫ СДВИНУТЬ КАРТИНКИ */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -21,40 +24,42 @@ body {
     color: #000;
 }
 
-/* ================= MENU (ФИНАЛ) ================= */
+/* ================= MENU (СТАБИЛЬНЫЙ) ================= */
 
-        .menu {
-            position: fixed;
-            top: 50%;
-            left: 40px;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 8px; /* теперь РЕАЛЬНО работает */
-        }
+.menu {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+}
 
-        .menu a {
-            font-size: 52px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #000;
-            width: fit-content;
-            line-height: 0.95; /* 🔑 КЛЮЧЕВОЙ ФИКС */
-            border-bottom: 1px solid transparent;
-        }
+.menu a {
+    display: block;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    line-height: 50px; /* 🔒 фикс — меню НЕ прыгает */
+    border-bottom: 1px solid transparent;
+}
 
-        .menu a:hover {
-            border-bottom: 1px solid #000;
-        }
+.menu a:hover {
+    border-bottom: 1px solid #000;
+}
 
-        .menu .contacts {
-            font-size: 18px;
-            text-transform: capitalize;
-            letter-spacing: 0.8px;
-            line-height: 1.1; /* отдельно для мелкого текста */
-        }
+.menu .contacts {
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    line-height: 18px; /* 🔒 фикс */
+}
+
 /* ================= SECTIONS ================= */
 
 .section {
@@ -63,25 +68,26 @@ body {
     overflow: hidden;
 }
 
-/* ФОНОВАЯ КАРТИНКА ПРОЕКТА */
+/* ФОН */
 .section::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    left: var(--image-left); /* 🔧 ключевая точка */
+    left: var(--image-left);
     right: 0;
     background-size: cover;
     background-position: center;
     z-index: 0;
 }
 
-/* ТЕКСТ ПРОЕКТА */
+/* ТЕКСТ */
 .content {
     position: relative;
     z-index: 1;
     margin-left: calc(var(--image-left) + 40px);
-    padding: 120px 80px;
+    margin-right: 40px;
+    padding-top: 120px;
     max-width: 520px;
     color: #fff;
 }
@@ -104,10 +110,10 @@ p {
     text-decoration: underline;
 }
 
-/* ЭМБЕДЫ */
+/* ЭМБЕД */
 iframe {
     width: 100%;
-    height: 200px;
+    height: 180px;
     border: none;
     margin-top: 24px;
 }
@@ -120,7 +126,6 @@ iframe {
 
 <nav class="menu">
     <a href="index.html">misha fedotov</a>
-
     <a href="art.html">art</a>
     <a href="ad.html">ad</a>
     <a href="gamedev.html">gamedev</a>
@@ -131,37 +136,23 @@ iframe {
     <a href="https://instagram.com/mishshaa" target="_blank" class="contacts">Instagram</a>
 </nav>
 
+<!-- ================= PROJECTS ================= -->
 
-<!-- ================= WHAT AM I CARRYING ================= -->
-
-<section class="section" style="--bg:url('art/what-am-i-carrying-1.jpg');">
+<section class="section" style="background-image:none;">
 <style>
 .section:nth-of-type(1)::before {
     background-image: url('art/what-am-i-carrying-1.jpg');
 }
 </style>
-
 <div class="content">
 <h2>What am I carrying?</h2>
-
-<p>
-My task was to create sound design and music for an exhibition at the Northern River Station of Moscow.
-</p>
-
-<p>
-About project:
+<p>My task was to create sound design and music for an exhibition at the Northern River Station of Moscow.</p>
+<p>About project:
 <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank">
-artmoskovia.ru
-</a>
-</p>
-
-<iframe scrolling="no" allow="autoplay"
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2093760270&visual=true">
-</iframe>
+artmoskovia.ru</a></p>
+<iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2093760270&visual=true"></iframe>
 </div>
 </section>
-
-<!-- ================= SMALL SHIP ================= -->
 
 <section class="section">
 <style>
@@ -169,24 +160,14 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/so
     background-image: url('art/small-ship-big-voyage-1.jpg');
 }
 </style>
-
 <div class="content">
 <h2>Small ship, big voyage</h2>
-
-<p>
-About project:
+<p>About project:
 <a href="https://www.afisha.ru/exhibition/malenkomu-korablyu-bolshoe-plavanie-291265/" target="_blank">
-afisha.ru
-</a>
-</p>
-
-<iframe scrolling="no" allow="autoplay"
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1933720127&visual=true">
-</iframe>
+afisha.ru</a></p>
+<iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1933720127&visual=true"></iframe>
 </div>
 </section>
-
-<!-- ================= MOSCOW RIVER AGE ================= -->
 
 <section class="section">
 <style>
@@ -194,33 +175,15 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/19
     background-image: url('art/moscow-river-age-1.jpg');
 }
 </style>
-
 <div class="content">
 <h2>The Moscow River age</h2>
-
-<p>
-My task was to create 4 abstract music compositions, each with a duration of 2 hours, to imagine how the Moscow river would sound in 2070.
-According to the project’s idea, in the future people will stop using the Moscow River for industrial purposes and will become more environmentally responsible.
-</p>
-
-<p>
-To reproduce the atmosphere of the future, I used sounds of nature, people swimming, wind, industrial machines, demolition hammers, motors, computers and electronic instruments.
-</p>
-
-<p>
-About project:
+<p>Four abstract 2-hour compositions imagining how the Moscow River would sound in 2070.</p>
+<p>About project:
 <a href="https://meganom.moscow/project/the-moscow-river-age/" target="_blank">
-meganom.moscow
-</a>
-</p>
-
-<iframe scrolling="no" allow="autoplay"
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/922672369&visual=true">
-</iframe>
+meganom.moscow</a></p>
+<iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/922672369&visual=true"></iframe>
 </div>
 </section>
-
-<!-- ================= SAGE OF THE SEA ================= -->
 
 <section class="section">
 <style>
@@ -228,30 +191,13 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists
     background-image: url('art/sage-of-the-sea-1.jpg');
 }
 </style>
-
 <div class="content">
 <h2>Sage of the Sea</h2>
-
-<p>
-Okhotka is a seafood restaurant in Moscow.
-I was invited to participate in the creation of an audio guide for the flagship restaurant.
-</p>
-
-<p>
-My task was to create nine small musical compositions with actors' voices.
-I created a minimalistic piano melody and added nature sounds and sound effects.
-</p>
-
-<p>
-About project:
+<p>Audio guide music for Okhotka seafood restaurant in Moscow.</p>
+<p>About project:
 <a href="https://izi.travel/en/09f4-saga-o-more-ohotka/ru" target="_blank">
-izi.travel
-</a>
-</p>
-
-<iframe scrolling="no" allow="autoplay"
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1889710808&visual=true">
-</iframe>
+izi.travel</a></p>
+<iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1889710808&visual=true"></iframe>
 </div>
 </section>
 
