@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>art — misha fedotov</title>
 
+    <!-- Utah Condensed -->
     <link href="https://fonts.cdnfonts.com/css/utah-condensed" rel="stylesheet">
 
     <style>
@@ -11,8 +12,10 @@
             margin: 0;
             background-color: #ffffff;
             font-family: 'Utah Condensed', Arial, sans-serif;
-            color: #fff;
+            color: #000;
         }
+
+        /* ===== SHARED MENU ===== */
 
         .menu {
             position: fixed;
@@ -21,19 +24,17 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            z-index: 10;
+            gap: 12px;
         }
 
         .menu a {
-            font-size: 52px;
-            font-weight: 700;
+            font-size: 26px;
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
             color: #000;
+            font-weight: 700;
             width: fit-content;
-            line-height: 0.95;
             border-bottom: 1px solid transparent;
         }
 
@@ -42,104 +43,136 @@
         }
 
         .menu .contacts {
-            font-size: 18px;
+            font-size: 9px;
             text-transform: capitalize;
             letter-spacing: 0.8px;
-            line-height: 1.1;
         }
 
+        /* ===== ART CONTENT ===== */
+
         .content {
-            margin-left: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
+            margin-left: 280px;          /* ширина зоны меню */
+            padding: 80px 40px;
+        }
+
+        .content-inner {
+            max-width: 720px;
+            margin: 0 auto;              /* ЦЕНТРИРОВАНИЕ */
         }
 
         .project {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            padding: 120px 60px; /* больше пространства для текста */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 500px;
-        }
-
-        .project::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); /* затемнение фона */
-            z-index: 0;
-        }
-
-        .project h2, .project p {
-            position: relative;
-            z-index: 1;
+            margin-bottom: 120px;
         }
 
         .project h2 {
-            font-size: 32px;
+            font-size: 28px;
+            margin-bottom: 20px;
             font-weight: 700;
-            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .project p {
-            font-size: 20px;
+            font-size: 16px;
             line-height: 1.4;
+            margin-bottom: 20px;
+            white-space: pre-line;
+        }
+
+        iframe {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<nav class="menu">
-    <a href="index.html">misha fedotov</a>
-    <a href="art.html">art</a>
-    <a href="ad.html">ad</a>
-    <a href="gamedev.html">gamedev</a>
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">misha fedotov</a>
 
-    <a href="https://t.me/mishafedotov" target="_blank" class="contacts">Telegram</a>
-    <a href="https://soundcloud.com/misha_fedotov/" target="_blank" class="contacts">Soundcloud</a>
-    <a href="https://behance.net/gallery/151338065/Portfolio" target="_blank" class="contacts">Behance</a>
-    <a href="https://instagram.com/mishshaa" target="_blank" class="contacts">Instagram</a>
-</nav>
+        <a href="art.html">art</a>
+        <a href="ad.html">ad</a>
+        <a href="gamedev.html">gamedev</a>
 
-<div class="content">
+        <a href="https://t.me/mishafedotov" target="_blank" class="contacts">Telegram</a>
+        <a href="https://soundcloud.com/misha_fedotov/" target="_blank" class="contacts">Soundcloud</a>
+        <a href="https://behance.net/gallery/151338065/Portfolio" target="_blank" class="contacts">Behance</a>
+        <a href="https://instagram.com/mishshaa" target="_blank" class="contacts">Instagram</a>
+    </nav>
 
-    <!-- Project: What am I carrying -->
-    <div class="project" style="background-image: url('art/what-am-i-carrying-1.jpg');">
-        <h2>What am I carrying?</h2>
-        <p><strong>Sound design for exhibition:</strong> Northern River Station of Moscow, 2025</p>
-        <p><strong>Scope of work:</strong> Music creation, sound design, mixing and processing</p>
-        <p><strong>About project:</strong> <a href="https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html" target="_blank" style="color:#fff;text-decoration:underline;">artmoskovia.ru</a></p>
-    </div>
+    <!-- CONTENT -->
+    <main class="content">
+        <div class="content-inner">
 
-    <!-- Project: Small ship, big voyage -->
-    <div class="project" style="background-image: url('art/small-ship-big-voyage-1.jpg');">
-        <h2>Small ship, big voyage</h2>
-        <p><strong>Sound design / Music:</strong> Interactive installation, 2024</p>
-        <p><strong>Scope of work:</strong> Composition, sound design, audio post-production</p>
-    </div>
+            <!-- PROJECT 1 -->
+            <div class="project">
+                <h2>What am I carrying?</h2>
+                <p>
+                    About project:
+                    https://artmoskovia.ru/muzej-transporta-moskvy-otkryl-novuyu-installyacziyu-na-severnom-rechnom-vokzale.html
+                </p>
 
-    <!-- Project: The Moscow River age / Triennale di Milano / 2019 -->
-    <div class="project" style="background-image: url('art/moscow-river-age-1.jpg');">
-        <h2>The Moscow River age / Triennale di Milano / 2019</h2>
-        <p><strong>Sound design / Music:</strong> Exhibition at Triennale di Milano, 2019</p>
-        <p><strong>Scope of work:</strong> Audio design, ambient sound creation</p>
-    </div>
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2093760270&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                </iframe>
+            </div>
 
-    <!-- Project: SAGE OF THE SEA -->
-    <div class="project" style="background-image: url('art/sage-of-the-sea-1.jpg');">
-        <h2>SAGE OF THE SEA</h2>
-        <p><strong>Sound design:</strong> Immersive exhibition, 2023</p>
-        <p><strong>Scope of work:</strong> Composition, audio spatialization, sound effects</p>
-    </div>
+            <!-- PROJECT 2 -->
+            <div class="project">
+                <h2>Small Ship</h2>
+                <p>
+                    About project:
+                    https://www.afisha.ru/exhibition/malenkomu-korablyu-bolshoe-plavanie-291265/
+                </p>
 
-</div>
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1933720127&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                    sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project">
+                <h2>The Moscow River Age / Triennale di Milano</h2>
+                <p>
+My task was to create 4 abstract music compositions, each with a duration of 2 hours, to imagine how the Moscow river would sound in 2070, and what sounds there would be heard. According to the project’s idea, in the future people will stop using the Moscow River for industrial purposes and will become more environmentally responsible. Therefore, in 2070 the water in Moscow river will be clean and suitable for recreation. That is why, in the process of writing music compositions I used the sounds of nature, people swimming, and the noise of wind.
+
+Also, in my childhood I was strongly influenced by cyberpunk, science fiction and animation films. So, to reproduce the atmosphere of the future, I collected the sounds of industrial machines, demolition hammers, drills, motors, computers and changed them with effects to try to create the noise of the future megapolis. But in reality, I wish that with new technologies humanity would make less noise and less sounds.
+
+To complete this task, I used freely available audio recordings from freesound.org users.
+
+About project:
+https://meganom.moscow/project/the-moscow-river-age/
+                </p>
+
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/922672369&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                    sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project">
+                <h2>Saga of the Sea</h2>
+                <p>
+Okhotka is a seafood restaurant in Moscow.
+I was invited to participate in the creation of an audio guide for the flagship restaurant.
+
+My task was to create nine small musical compositions with actors' voices.
+The interior of the restaurant was supposed to be very minimalistic, with lots of art objects.
+With this in mind, I created a minimalistic melody on the piano, and added samples of nature sounds and sound effects.
+
+About project:
+https://izi.travel/en/09f4-saga-o-more-ohotka/ru#abd6-barelef/ru
+                </p>
+
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1889710808&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                    sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
+
+        </div>
+    </main>
 
 </body>
 </html>
